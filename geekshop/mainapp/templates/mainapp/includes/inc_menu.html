@@ -1,0 +1,12 @@
+<ul id="navbar">
+    </a>
+    <li><a class="{% if request.resolver_match.url_name == 'index' %}
+        active
+        {% endif %}" href="{% url 'index' %}">Главная</a></li>
+    <li><a class="{% if request.resolver_match.url_name == 'products' %}
+        active
+        {% endif %}" href="{% url 'products' %}">Наш продукт</a></li>
+    <li><a class="{% if request.resolver_match.url_name == 'contacts' %}
+        active
+        {% endif %}" href="{% url 'contacts' %}">Наши контакты</a></li>
+</ul>
