@@ -1,13 +1,16 @@
 from django.shortcuts import render
+from .models import Product
 
 
 def main(request):
-    return render(request, 'mainapp/index.html', context={'user': {'name': 'Pavel', 'surname': 'Ilinykh'}, 'arr': [1, 2, 3, 4, 5]})
+    product_list = Product.objects.all()
+
+    return render(request, 'mainapp/index.html', context={'user': {'name': 'Pavel', 'surname': 'Ilinykh'}, 'products': product_list})
 
 
-def products(request):
+def products(request, pk=None):
     return render(request, 'mainapp/products.html')
 
 
-def contacts(request):
+def contacts(request, pk=None):
     return render(request, 'mainapp/contacts.html')

@@ -1,5 +1,6 @@
 {% extends 'mainapp/base.html'%}
 {% load static %}
+
 {% block title %}
     <title>Главная</title>
 {% endblock %}
@@ -10,8 +11,8 @@
     <div>{{user.name|title}}</div>
 {% endif %}
 <ul>
-    {% for  number in arr %}
-        <li>{{ number }}</li>
+    {% for  product in products %}
+        <li>{{ product.name }} ({{ product.category }})</li>
     {% endfor %}
 </ul>
     <h1 class="test-class">Главная</h1>
